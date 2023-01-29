@@ -1,0 +1,27 @@
+version: '3.8'
+services:
+  db:
+    container_name: Postgres_Server
+    image: 'postgis/postgis:latest'
+    restart: always
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: geo
+    ports:
+      - "5432:5432"
+    volumes:
+      - './postgres_data:/var/lib/postgresql/data'
+  pgadmin:
+    container_name: PgAdmin_container
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: root@root.com
+      PGADMIN_DEFAULT_PASSWORD: password
+    ports:
+      - "5050:80"
+    volumes:
+      # Path on the host, relative to the Compose file
+      - ./data:/var/lib/pgadmin/storage/root_root.com/data/
+      - ./pgadmin:/var/lib/pgadmin

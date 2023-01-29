@@ -1,0 +1,7 @@
+build-essential
+openssl
+libcurl4
+gcc
+g++
+make
+libc-dev

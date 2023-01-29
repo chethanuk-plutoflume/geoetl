@@ -1,0 +1,4 @@
+airflow-provider-duckdb==0.0.1; python_version >= "3.7" and python_version < "4.0"
+airflow-provider-great-expectations==0.2.4; python_version >= "3.6"
+duckdb==0.6.1
+astro-sdk-python[postgres]
